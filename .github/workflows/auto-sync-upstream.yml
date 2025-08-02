@@ -26,7 +26,6 @@ jobs:
       - name: 关联原仓库
         run: |
           git remote add upstream https://github.com/jaywcjlove/linux-command.git || true
-          # 上面的地址需与你git remote -v中显示的upstream地址一致
 
       # 步骤4：拉取原仓库最新代码
       - name: 拉取原仓库更新
@@ -35,8 +34,8 @@ jobs:
       # 步骤5：合并原仓库代码到本地master分支
       - name: 合并原仓库更新
         run: |
-          git checkout master# 切换到你的主分支（如果是main请修改）
-          git merge upstream/master  # 合并原仓库的master分支（与原仓库保持一致）
+          git checkout master
+          git merge upstream/master
 
       # 步骤6：推送到你的fork仓库
       - name: 推送到自己的仓库
